@@ -5,7 +5,7 @@ import { h, render, useState, useEffect, useRef } from 'https://lsong.org/script
 import { Ollama } from './ollama.js';
 
 const ollama = new Ollama({
-  host: 'https://ollama.lsong.one',
+  host: 'https://ollama.lsong.org',
 });
 
 const Message = ({ message }) => {
@@ -32,7 +32,7 @@ const App = () => {
     const fetchModels = async () => {
       const modelsList = await ollama.list();
       setModels(modelsList);
-      setModel(modelsList[0].model); // 设置默认模型
+      setModel(modelsList[0].model);
     };
     fetchModels();
   }, []);
